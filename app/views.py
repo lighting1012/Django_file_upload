@@ -24,4 +24,5 @@ def upload(request):
             result_string += '\n相似度：\n'
             result_string += element[3]
         return HttpResponse(result_string)
+
         # return render(request,"")

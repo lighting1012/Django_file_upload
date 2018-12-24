@@ -5,6 +5,11 @@
     <title>Title</title>
 </head>
 <body>
-
+    <h1>相似文章</h1>
+    {% for x in result_title %}
+    <h3><a href = "detail.html">{{ x.0 }}</a></h3>
+    <p>相似度：{{x.2}}</p>
+    <p><span>{{ x.1 }}</span></p>
+    {% endfor %}
 </body>
 </html>

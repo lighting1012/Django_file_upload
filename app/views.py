@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from django.shortcuts import HttpResponse
 import text_similarity.cosine_similarity as cosine
 import os
 
@@ -17,12 +16,12 @@ def upload(request):
         sample_text = f.read()
         f.close()
         result_list = cosine.main(sample_text, 'text_similarity/test.db')
-        result_string = ''
+        result_title = []
         for element in result_list:
-            result_string += element[1]
-            result_string += element[2]
-            result_string += '\n相似度：\n'
-            result_string += element[3]
-        return HttpResponse(result_string)
+            result_title.append([element[1],element[2],element[3]])
+        context = {"result_title": result_title}
+        return render(request, "result.html", context)
 
-        # return render(request,"")
+
+def detail(request):
+    return render(request, "detail.html")

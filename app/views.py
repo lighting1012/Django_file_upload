@@ -16,10 +16,8 @@ def upload(request):
         sample_text = f.read()
         f.close()
         result_list = cosine.main(sample_text, 'text_similarity/test.db')
-        result_title = []
-        for element in result_list:
-            result_title.append([element[1],element[2],element[3]])
-        context = {"result_title": result_title}
+        title, text = obj.name, sample_text
+        context = {"result_list": result_list, "title": title, "text":text}
         return render(request, "result.html", context)
 
 

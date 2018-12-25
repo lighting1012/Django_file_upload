@@ -5,7 +5,7 @@
 3. choose file to upload  
   the file would be saved in file_upload/text_similarity/received_files  
 4. once uploaded the file, 10 most similar text in database would be recommended.  
-(the database is file_upload/text_similarity/test.db,there have 20 record in database.)
+(the database is file_upload/text_similarity/test.db,there have 20 records in database.)
 
 ## cosine similarity
 1. 文本分词  
